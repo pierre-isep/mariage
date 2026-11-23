@@ -111,6 +111,11 @@ nav a:hover,nav a:focus-visible{border-color:currentColor;outline:none}
 .rhead{grid-area:head}.rlist{grid-area:list}
 .rsvp ul{margin:0;padding-left:20px}
 .rsvp li{margin-bottom:6px}
+.formcard{max-width:780px;margin:56px auto 0;background:#fff;border-radius:16px;padding:10px;box-shadow:0 16px 30px -18px rgba(0,0,0,.6)}
+.formcard iframe{display:block;width:100%;height:1500px;border:0;border-radius:10px;background:#fff}
+.formalt{text-align:center;font-size:14px;color:#c9bfd8;margin:16px auto 0;max-width:none}
+.formalt a{color:#f6d860}
+@media (max-width:600px){.formcard{margin-top:36px;padding:6px}.formcard iframe{height:1800px}}
 .deadline{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;font-size:clamp(40px,6vw,64px);color:#f6d860;line-height:1}
 footer{background:#1b1426;color:#c9bfd8;padding:28px max(5vw,16px);font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
@@ -284,10 +289,14 @@ nav{justify-content:flex-start;gap:0 12px;font-size:14px}
         <li>si vous avez besoin d'une navette, depuis la gare ou pour rentrer la nuit ;</li>
         <li>où vous dormez, et si vous proposez ou cherchez un covoiturage.</li>
       </ul>
-      <p style="margin-top:20px"><a class="btn" id="rsvpBtn" href="mailto:pmmg.berger@gmail.com?subject=Mariage%20%3A%20notre%20r%C3%A9ponse">Répondre</a></p>
-      <p class="small" style="color:#c9bfd8">Le formulaire en ligne sera ici. D'ici là, répondez à Pierre par mail ou au <span class="nowrap">06 15 82 86 64</span>.</p>
+      <p style="margin-top:20px"><a class="btn" id="rsvpBtn" href="#formulaire">Remplir le formulaire</a></p>
+      <p class="small" style="color:#c9bfd8">Deux minutes suffisent, et vous pourrez modifier votre réponse ensuite.</p>
     </div>
   </div>
+  <div class="formcard" id="formulaire">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeW5w3FHcVSxxE50bZ-pQtc5uhdAlNneJ10UKpkXR13ON0eTw/viewform?embedded=true" title="Formulaire de réponse au mariage" loading="lazy">Chargement du formulaire…</iframe>
+  </div>
+  <p class="formalt">Le formulaire ne s'affiche pas ? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeW5w3FHcVSxxE50bZ-pQtc5uhdAlNneJ10UKpkXR13ON0eTw/viewform" target="_blank" rel="noopener">Ouvrez-le dans un nouvel onglet</a>.</p>
 </section>
 </main>
 
