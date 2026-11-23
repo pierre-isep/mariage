@@ -44,8 +44,9 @@ nav a:hover,nav a:focus-visible{border-color:currentColor;outline:none}
 .lit .bulb{animation:on .5s ease-out forwards;animation-delay:calc(var(--i)*70ms)}
 @keyframes on{to{opacity:1;filter:drop-shadow(0 0 6px #ffe680)}}
 @media (prefers-reduced-motion:reduce){.lit .bulb{animation:none;opacity:1}}
-.poster{padding:0 max(5vw,16px);max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px 48px;align-items:end}
-.names{font-size:clamp(84px,12vw,180px);font-weight:900;line-height:.86;letter-spacing:-.02em;text-transform:none}
+.poster{padding:0 max(5vw,16px);max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"names photo" "when photo";gap:28px 48px;align-items:end}
+.names{grid-area:names}.when{grid-area:when}.p1{grid-area:photo}
+.names{font-size:clamp(84px,11vw,160px);font-weight:900;line-height:.86;letter-spacing:-.02em;text-transform:none}
 .names span{display:block}
 .names .amp{font-size:.45em;font-weight:600;line-height:1.1;padding-left:.12em}
 .when{border-top:3px solid currentColor;padding-top:18px}
@@ -55,7 +56,13 @@ nav a:hover,nav a:focus-visible{border-color:currentColor;outline:none}
 .btn:hover{filter:brightness(1.08)}
 .btn:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
-.scene{display:block;width:100%;height:clamp(170px,24vw,320px);margin-top:28px}
+.scene{display:block;width:100%;height:clamp(150px,18vw,260px);margin-top:28px}
+
+/* Photos imprimées posées sur l'affiche */
+.print{margin:0;background:light-dark(#fff,#f3ecdf);padding:10px;border-radius:2px;box-shadow:0 1px 2px rgba(38,25,58,.18),0 16px 30px -18px rgba(38,25,58,.6)}
+.print img{display:block;width:100%;height:auto}
+.p1{width:min(100%,360px);transform:rotate(2.5deg);justify-self:end;align-self:center}
+.p2{grid-area:photo;width:min(100%,320px);transform:rotate(-2.5deg);justify-self:center;align-self:center}
 
 /* Programme */
 .prog{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:48px;margin-top:32px}
@@ -100,7 +107,8 @@ nav a:hover,nav a:focus-visible{border-color:currentColor;outline:none}
 
 /* Répondre */
 .dark{background:#26193a;color:#f3ecdf}
-.rsvp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:start}
+.rsvp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr);grid-template-areas:"head list photo";gap:40px 48px;align-items:start}
+.rhead{grid-area:head}.rlist{grid-area:list}
 .rsvp ul{margin:0;padding-left:20px}
 .rsvp li{margin-bottom:6px}
 .deadline{font-family:"Big Shoulders Display",Impact,sans-serif;font-weight:800;font-size:clamp(40px,6vw,64px);color:#f6d860;line-height:1}
@@ -108,7 +116,8 @@ footer{background:#1b1426;color:#c9bfd8;padding:28px max(5vw,16px);font-size:15p
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
 
 @media (max-width:900px){
-.poster,.prog,.intro,.rsvp{grid-template-columns:minmax(0,1fr)}
+.prog,.intro{grid-template-columns:minmax(0,1fr)}
+.rsvp{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head photo" "list list"}
 .cols3,.tips{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 }
 @media (max-width:600px){
@@ -116,6 +125,10 @@ nav{justify-content:flex-start;gap:0 12px;font-size:14px}
 .garland{height:80px}
 
 .cols3,.tips,.addr{grid-template-columns:minmax(0,1fr)}
+.poster{grid-template-columns:minmax(0,1fr);grid-template-areas:"names" "when" "photo"}
+.p1{justify-self:center;width:min(78%,320px);margin-top:8px}
+.rsvp{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "photo" "list"}
+.p2{width:min(78%,300px)}
 .stays li{grid-template-columns:minmax(0,1fr) auto;gap:6px 12px}
 .stays li .what{grid-column:1/-1;order:3;font-size:15px;color:var(--soft)}
 .stays li a{grid-column:1/-1;order:4;justify-content:flex-start;min-height:36px}
@@ -143,6 +156,7 @@ nav{justify-content:flex-start;gap:0 12px;font-size:14px}
       <p class="place">À Allan, dans la Drôme provençale</p>
       <a class="btn" href="#repondre">Répondre avant le 15 avril</a>
     </div>
+    <figure class="print p1"><img src="photos/pierre-suzanne-mer.jpg" width="800" height="1000" alt="Pierre et Suzanne au bord de la mer, au coucher du soleil"></figure>
   </div>
   <svg class="scene" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
     <defs>
@@ -255,12 +269,13 @@ nav{justify-content:flex-start;gap:0 12px;font-size:14px}
 
 <section class="band dark" id="repondre">
   <div class="wrap rsvp">
-    <div>
+    <div class="rhead">
       <h2>Vous venez ?</h2>
       <p style="margin-top:14px">Dites-le-nous avant le</p>
       <div class="deadline">15 avril 2027</div>
     </div>
-    <div>
+    <figure class="print p2"><img src="photos/pierre-suzanne-porte.jpg" width="800" height="1000" alt="Pierre et Suzanne qui rient devant une porte en bois"></figure>
+    <div class="rlist">
       <p>Une réponse par foyer suffit. On vous demandera :</p>
       <ul>
         <li>si vous venez à Paris, à Allan, au déjeuner du dimanche ;</li>
