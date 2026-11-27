@@ -81,6 +81,9 @@ nav a:hover,nav a:focus-visible{border-color:currentColor;outline:none}
 .addr div{background:rgba(255,255,255,.1);border-radius:14px;padding:20px 22px}
 .addr strong{display:block;font-size:19px}
 .addr a{font-weight:600}
+.covoit{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;flex-wrap:wrap;margin-top:28px;padding:22px 24px;border:2px dashed rgba(255,255,255,.5);border-radius:14px}
+.covoit h3{margin:0 0 6px}
+.covoit p{margin:0;max-width:60ch}
 
 /* Dormir */
 .intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:end}
@@ -200,7 +203,7 @@ nav{justify-content:flex-start;gap:0 12px;font-size:14px}
       <div class="day">
         <h3>Samedi 12 juin, à Allan</h3>
         <div class="slot"><b>16h30</b><div><strong>Cérémonie au Château Bizard</strong><p>En plein air, au milieu des vignes.</p></div></div>
-        <div class="slot"><b>18h</b><div><strong>Apéritif chez les parents de Pierre</strong><p>À deux kilomètres, sous les guirlandes.</p></div></div>
+        <div class="slot"><b>18h</b><div><strong>Apéritif chez les parents de Pierre</strong><p>À deux kilomètres, sous les guirlandes. On y va à pied ou en voiture, au choix.</p></div></div>
         <div class="slot"><b>20h</b><div><strong>Buffet</strong><p>Debout, préparé par Marion, traiteur de la Drôme.</p></div></div>
         <div class="slot"><b>22h</b><div><strong>On danse</strong><p>Jusqu'au bout de la nuit. Navettes de retour de 23h30 à 3h30.</p></div></div>
       </div>
@@ -227,12 +230,17 @@ nav{justify-content:flex-start;gap:0 12px;font-size:14px}
     <p style="margin-top:12px">Allan est un petit village perché à 10 minutes au sud-est de Montélimar, entre vignes et lavande.</p>
     <div class="cols3">
       <div><h3>En train</h3><p>TGV depuis Paris Gare de Lyon jusqu'à la gare de Montélimar, directement ou par Valence TGV. Réservez tôt, les prix montent vite en juin.</p></div>
-      <div><h3>En voiture</h3><p>Autoroute A7, sortie Montélimar Sud. Allan est ensuite à cinq minutes. On peut se garer sur place aux deux adresses.</p></div>
+      <div><h3>En voiture</h3><p>Autoroute A7, sortie Montélimar Sud. Allan est ensuite à cinq minutes. On peut se garer sur place aux deux adresses. Pour partager la route, voyez le covoiturage plus bas.</p></div>
       <div><h3>Les navettes</h3><p>Un van vient chercher ceux qui arrivent en train, et d'autres vous ramènent la nuit vers Allan, Malataverne, Châteauneuf-du-Rhône et Montélimar Sud. Dites-nous dans le formulaire si vous en avez besoin.</p></div>
     </div>
     <div class="addr">
       <div><strong>La cérémonie</strong>Château Bizard<br>460 chemin de Bizard, 26780 Allan<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau%20Bizard%2C%20460%20Chemin%20de%20Bizard%2C%2026780%20Allan&amp;query_place_id=ChIJPSDwuLlttRIRqzXWHDeIsVM" target="_blank" rel="noopener">Ouvrir le plan</a></div>
       <div><strong>La fête et le déjeuner</strong>Chez les parents de Pierre<br>740 C chemin du Rieux, 26780 Allan<br><a href="https://www.google.com/maps/search/?api=1&amp;query=740%20Chemin%20du%20Rieux%2C%2026780%20Allan&amp;query_place_id=ChIJtV1BLjJstRIRE2lwcIckBUo" target="_blank" rel="noopener">Ouvrir le plan</a></div>
+    </div>
+    <p class="small" style="margin-top:16px">Du château à la maison, il y a environ 2 km : 25 minutes à pied par de petites routes, ou 5 minutes en voiture. À vous de choisir.</p>
+    <div class="covoit" id="covoiturage">
+      <div><h3>Covoiturage</h3><p>Vous avez des places dans votre voiture, ou vous en cherchez une ? Ajoutez une ligne dans le tableau partagé, puis organisez-vous directement entre vous.</p></div>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1ExvZCTVZN7pPAu9uslmFmxO2HqScurGaN56CjZgZITM/edit" target="_blank" rel="noopener">Ouvrir le tableau</a>
     </div>
   </div>
 </section>
@@ -287,7 +295,7 @@ nav{justify-content:flex-start;gap:0 12px;font-size:14px}
         <li>combien vous serez, et s'il y a des enfants ;</li>
         <li>vos allergies ou régimes ;</li>
         <li>si vous avez besoin d'une navette, depuis la gare ou pour rentrer la nuit ;</li>
-        <li>où vous dormez, et si vous proposez ou cherchez un covoiturage.</li>
+        <li>où vous dormez.</li>
       </ul>
       <p style="margin-top:20px"><a class="btn" id="rsvpBtn" href="#formulaire">Remplir le formulaire</a></p>
       <p class="small" style="color:#c9bfd8">Deux minutes suffisent, et vous pourrez modifier votre réponse ensuite.</p>
